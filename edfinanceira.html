@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Educação Financeira - EducaReforço</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="header-placeholder"></div>
+
+  <main class="materia-container">
+    <h1>Educação Financeira</h1>
+    <p>Escolha um tema e explore os vídeos recomendados.</p>
+
+    <div class="accordion">
+
+      <!-- BLOCO: Educação Financeira -->
+      <div class="accordion-item">
+        <button class="accordion-toggle">Aulas</button>
+        <div class="accordion-content">
+          <p>Confira vídeos sobre como lidar com dinheiro diretamente do YouTube</p>
+          <div class="videos-container">
+
+            <div class="video-card">
+              <a href="https://youtu.be/1ulzj3dJ4EA?si=e4cX-J9ITOF5oC0s" target="_blank">
+                <img src="https://i.ytimg.com/vi/1ulzj3dJ4EA/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAxUMpTJ0zCNE25brFPswQaCOU7cg">
+              </a>
+              <div class="video-info">
+                <h3> Como funciona a economia? - Jovens de Negócios</h3>
+              </div>
+            </div>
+
+            <div class="video-card">
+              <a href="https://www.youtube.com/playlist?list=PLrfk0nlDFiXNUt9zGWoiTTzwb5OqjXu-1" target="_blank">
+                <img src="https://i.ytimg.com/vi/SiIztrwfg1s/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAXR81Jhiudpi2xhdw3UPz2DgMSQw">
+              </a>
+              <div class="video-info">
+                <h3>Curso Completo Educação Financeira - Escola Invest</h3>
+              </div>
+            </div>
+
+            <div class="video-card">
+              <a href="https://youtube.com/playlist?list=PLHz_AreHm4dl8FBQLBC0bWSdL2FGmZnne&si=3FV5BsseRS7-E5Np" target="_blank">
+                <img src="https://i.ytimg.com/vi/Ep65y-eQxgE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLChK1MOBLiJuER81ocCRwNUmd2HGA">
+              </a>
+              <div class="video-info">
+                <h3>Encontrar o EQUILÍBRIO FINANCEIRO | A Mentalidade das Finanças Pessoais - Manual da Evolução</h3>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      
+</div>
+
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <p><strong>EducaReforço</strong> — Sua plataforma gratuita para estudar com vídeos explicativos, separados por disciplinas e temas.</p>
+      <div class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="disciplinas.html">Disciplinas</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+      </div>
+      <p class="footer-copy">© 2025 EducaReforço - Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Accordion Script -->
+  <script>
+    const toggles = document.querySelectorAll(".accordion-toggle");
+
+    toggles.forEach(toggle => {
+      toggle.addEventListener("click", () => {
+        toggles.forEach(other => {
+          if (other !== toggle) {
+            other.classList.remove("active");
+            other.nextElementSibling.style.display = "none";
+          }
+        });
+        toggle.classList.toggle("active");
+        const content = toggle.nextElementSibling;
+        content.style.display = content.style.display === "block" ? "none" : "block";
+      });
+    });
+  </script>
+
+  <!-- Header Script -->
+  <script>
+    fetch("header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("header-placeholder").innerHTML = data;
+
+        const toggleButton = document.querySelector(".menu-toggle");
+        const menu = document.getElementById("menu");
+
+        if (toggleButton && menu) {
+          toggleButton.addEventListener("click", () => {
+            menu.classList.toggle("show");
+          });
+        }
+      })
+      .catch(error => console.error("Erro ao carregar o header:", error));
+  </script>
+
+</body>
+</html>

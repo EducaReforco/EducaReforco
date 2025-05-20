@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre - EducaReforço</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="header-placeholder"></div>
+
+    <main>
+        <h1 class="fade-in">Sobre o EducaReforço</h1>
+        <p class="fade-in delay-1">
+            O <strong>EducaReforço</strong> é um site educacional focado em ajudar estudantes de todos os níveis a se prepararem para o futuro. 
+            Nosso objetivo é fornecer conteúdos ricos e acessíveis, com o auxílio de vídeos do YouTube, para que o aluno possa 
+            aprender de maneira mais interativa e envolvente.
+        </p>
+        <p class="fade-in delay-2">
+            O projeto foi desenvolvido com o intuito de tornar o aprendizado mais dinâmico e acessível a todos. 
+            Acreditamos que a educação de qualidade deve estar ao alcance de todos, e, por isso, o <strong>EducaReforço</strong> oferece uma plataforma 
+            prática onde você pode encontrar vídeos explicativos sobre os conteúdos de diferentes disciplinas.
+        </p>
+        <p class="fade-in delay-3">
+            Se você está buscando por uma maneira mais fácil de estudar ou entender algo novo, o <strong>EducaReforço</strong> é o seu lugar.
+        </p>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p><strong>EducaReforço</strong> — Sua plataforma gratuita para estudar com vídeos explicativos, separados por disciplinas e temas.</p>
+            <nav class="footer-nav">
+            <div class="footer-nav">
+                <a href="index.html">Home</a>
+                <a href="disciplinas.html">Disciplinas</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="contato.html">Contato</a>
+            </div>
+            <p class="footer-copy">© 2025 EducaReforço - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        fetch("header.html")
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById("header-placeholder").innerHTML = data;
+      
+            // Reativa o menu após o header ser carregado
+            const toggleButton = document.querySelector(".menu-toggle");
+            const menu = document.getElementById("menu");
+            toggleButton.addEventListener("click", () => {
+              menu.classList.toggle("show");
+            });
+          })
+          .catch(error => console.error("Erro ao carregar o header:", error));
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inglês - EducaReforço</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="header-placeholder"></div>
+
+  <main class="materia-container">
+    <h1>Inglês</h1>
+    <p>Escolha um tema e explore os vídeos recomendados.</p>
+
+    <div class="accordion">
+
+      <!-- BLOCO: Inglês -->
+      <div class="accordion-item">
+        <button class="accordion-toggle">Aulas</button>
+        <div class="accordion-content">
+          <p>Confira as playlist com aulas gratuitas de Inglês direto do YouTube</p>
+          <div class="videos-container">
+
+            <div class="video-card">
+              <a href="https://youtube.com/playlist?list=PL41dMNqXopt85RhRgFp_jdoI5Bz7DUG-c&si=nVA0KeuH6S4RiuIe" target="_blank">
+                <img src="https://i.ytimg.com/vi/X5TdMsc4YCg/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDh_KUtpb5lo8uClSs0m_Pl16Fw8Q">
+              </a>
+              <div class="video-info">
+                <h3>Professor Kenny - INGLÊS PARA INICIANTES </h3>
+              </div>
+            </div>
+
+            <div class="video-card">
+              <a href="https://youtube.com/playlist?list=PLvnDcR9zJ3ToYT9CcWdY3hNuBh4FY99J5&si=V3ljo8mPeWM1YE-u" target="_blank">
+                <img src="https://i.ytimg.com/vi/rrUBcqRJFHI/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBpqDJPWzs45-QU9TXar_lOKMyE0A">
+              </a>
+              <div class="video-info">
+                <h3>Professor Rui Ventura - Inglês | Curso Gratuito Completo</h3>
+              </div>
+            </div>
+
+            <div class="video-card">
+              <a href="https://youtube.com/playlist?list=PLHz_AreHm4dl8FBQLBC0bWSdL2FGmZnne&si=3FV5BsseRS7-E5Np" target="_blank">
+                <img src="https://i.ytimg.com/vi/QoTfOVYXmUc/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBMSxkmgK0QVOdjyU0RjOdxlsan1A">
+              </a>
+              <div class="video-info">
+                <h3>Professor Gustavo Guanabara e Professora Joana Costa - Curso de Inglês para Iniciantes - Módulo 1</h3>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      
+</div>
+
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <p><strong>EducaReforço</strong> — Sua plataforma gratuita para estudar com vídeos explicativos, separados por disciplinas e temas.</p>
+      <div class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="disciplinas.html">Disciplinas</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+      </div>
+      <p class="footer-copy">© 2025 EducaReforço - Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Accordion Script -->
+  <script>
+    const toggles = document.querySelectorAll(".accordion-toggle");
+
+    toggles.forEach(toggle => {
+      toggle.addEventListener("click", () => {
+        toggles.forEach(other => {
+          if (other !== toggle) {
+            other.classList.remove("active");
+            other.nextElementSibling.style.display = "none";
+          }
+        });
+        toggle.classList.toggle("active");
+        const content = toggle.nextElementSibling;
+        content.style.display = content.style.display === "block" ? "none" : "block";
+      });
+    });
+  </script>
+
+  <!-- Header Script -->
+  <script>
+    fetch("header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("header-placeholder").innerHTML = data;
+
+        const toggleButton = document.querySelector(".menu-toggle");
+        const menu = document.getElementById("menu");
+
+        if (toggleButton && menu) {
+          toggleButton.addEventListener("click", () => {
+            menu.classList.toggle("show");
+          });
+        }
+      })
+      .catch(error => console.error("Erro ao carregar o header:", error));
+  </script>
+
+</body>
+</html>

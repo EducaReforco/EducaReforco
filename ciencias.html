@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matemática - EducaReforço</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="header-placeholder"></div>
+
+  <main class="materia-container">
+    <h1>Matemática</h1>
+    <p>Escolha um tema e explore os vídeos recomendados.</p>
+
+    <div class="accordion">
+
+      
+      <!-- BLOCO: Ciencias -->
+<div class="materias-links">
+  <a href="fisica.html" class="botao-link">Física</a>
+  <a href="biologia.html" class="botao-link">Biologia</a>
+  <a href="quimica.html" class="botao-link">Química</a>
+</div>
+
+
+
+        
+        
+    </div>
+
+
+   
+
+        
+      
+    
+
+</div>
+
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <p><strong>EducaReforço</strong> — Sua plataforma gratuita para estudar com vídeos explicativos, separados por disciplinas e temas.</p>
+      <div class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="disciplinas.html">Disciplinas</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+      </div>
+      <p class="footer-copy">© 2025 EducaReforço - Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Accordion Script -->
+  <script>
+    const toggles = document.querySelectorAll(".accordion-toggle");
+
+    toggles.forEach(toggle => {
+      toggle.addEventListener("click", () => {
+        toggles.forEach(other => {
+          if (other !== toggle) {
+            other.classList.remove("active");
+            other.nextElementSibling.style.display = "none";
+          }
+        });
+        toggle.classList.toggle("active");
+        const content = toggle.nextElementSibling;
+        content.style.display = content.style.display === "block" ? "none" : "block";
+      });
+    });
+  </script>
+
+  <!-- Header Script -->
+  <script>
+    fetch("header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("header-placeholder").innerHTML = data;
+
+        const toggleButton = document.querySelector(".menu-toggle");
+        const menu = document.getElementById("menu");
+
+        if (toggleButton && menu) {
+          toggleButton.addEventListener("click", () => {
+            menu.classList.toggle("show");
+          });
+        }
+      })
+      .catch(error => console.error("Erro ao carregar o header:", error));
+  </script>
+
+</body>
+</html>
